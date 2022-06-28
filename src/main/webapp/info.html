@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="fav/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="fav/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="fav/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="fav/site.webmanifest" />
+		<link rel="stylesheet" href="style/main.css" />
+		<link rel="stylesheet" href="style/info.css" />
+		<title>Top Movies</title>
+		<script
+			src="https://kit.fontawesome.com/644bfa6686.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="./js/info.js" defer></script>
+	</head>
+
+	<body>
+		<div class="nav">
+			<div class="menu-cont bars">
+				<i class="fa-solid fa-list-ul"></i>
+			</div>
+			<div class="menu-cont logo">
+				<a href="/"
+					><i class="fa-solid fa-tv"
+						><span class="logo-title"> Top Movies</span></i
+					></a
+				>
+			</div>
+			<div class="head-state-div">
+				<h4 id="head-state">Информация о фильме</h4>
+			</div>
+			<div class="search">
+				<form action="" class="form" id="form-id">
+					<input
+						type="text"
+						name="title"
+						id="search-input"
+						placeholder="Поиск"
+					/>
+					<i id="search-button" class="fa-solid fa-magnifying-glass"></i>
+				</form>
+				<div class="fav-logo">
+					<a href="./favor.html" id="fav-icon"
+						><i class="fa-regular fa-star"
+							><span id="fav-counter"><sub>0</sub></span></i
+						></a
+					>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="aside">
+				<ul class="aside-list">
+					<li><a href="./index.html">Главная</a></li>
+					<li class="cat-li">-- Фильмы</li>
+					<li class="cat-li">-- Сериалы</li>
+					<li class="cat-li">-- Спорт</li>
+					<li><a href="./favor.html">Избранное</a></li>
+					<li id="li-info">Инфо</li>
+					<li class="aside-warn">
+						Для просмотра фильмов на этом сайте, у вас должен быть установлен
+						Ace Stream Player (или подобный). Также можно предварительно скачать
+						видео с помощью Torrent клиента.
+					</li>
+				</ul>
+			</div>
+			<div class="main" id="info-list"></div>
+			<div class="alt">
+				<!-- <p>Похожие ссылки</p> -->
+				<ul class="alt-links">Похожие ссылки</ul>
+			</div>
+		</div>
+	</body>
+</html>
