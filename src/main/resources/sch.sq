@@ -1,3 +1,6 @@
+DROP TABLE IF EXISTS description, movies CASCADE;
+
+
 CREATE TABLE description (
   id SERIAL PRIMARY KEY NOT NULL,
   title varchar(255) UNIQUE DEFAULT NULL,
