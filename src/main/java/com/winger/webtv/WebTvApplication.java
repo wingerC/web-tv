@@ -20,7 +20,7 @@ public class WebTvApplication {
 	@Bean
 	public CommandLineRunner init (){
 		return args -> {
-			serviceManager.refreshContent();
+			//serviceManager.refreshContent();
 			serviceManager.fillCacheList();
 		};
 	}
