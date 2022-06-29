@@ -18,6 +18,7 @@ public class ServiceManager {
     DescriptionRepository descriptionRepository;
     Cache cache;
     DescriptionGetter descriptionGetter;
+    Integer pagesToLoad;
 
     @Autowired
     public ServiceManager(MoviesRepository moviesRepository, DescriptionRepository descriptionRepository,
@@ -26,10 +27,17 @@ public class ServiceManager {
         this.descriptionRepository = descriptionRepository;
         this.cache = cache;
         this.descriptionGetter = descriptionGetter;
+        try {
+        this.pagesToLoad = Integer.parseInt(System.getenv().get("MAX_PAGE"));
+        }catch (Exception e){
+            System.out.println("No property MAX_PAGE, set to 1. Err: " + e.getMessage());
+            this.pagesToLoad = 1;
+        }
+
     }
 
     public void refreshContent(){
-        List<Movie> list = new Aggregator(moviesRepository).getMovies(1);
+        List<Movie> list = new Aggregator(moviesRepository).getMovies(pagesToLoad);
         List<String> idList = new ArrayList<>();
         System.out.println("-------------");
 
