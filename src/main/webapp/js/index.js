@@ -35,7 +35,7 @@ function render(data) {
 
 	const storeArray = localStorage.getItem(STORAGE_FAV) ?? [];
 	const list = document.getElementById("list");
-	const output = document.createElement("div");
+	//const output = document.createElement("div");
 
 	data.forEach((movie) => {
 		let srcPost = movie.description.src;
@@ -112,7 +112,8 @@ function render(data) {
 		cardBtnHolder.appendChild(cardBtnFavor);
 		cardDescription.appendChild(cardBtnHolder);
 		card.appendChild(cardDescription);
-		output.appendChild(card);
+		//output.appendChild(card);
+		list.appendChild(card);
 
 		card.addEventListener("click", (e) => {
 			e.stopPropagation();
@@ -120,7 +121,7 @@ function render(data) {
 		});
 	});
 
-	list.appendChild(output);
+	//list.appendChild(output);
 	fetchSize();
 }
 

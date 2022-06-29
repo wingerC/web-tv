@@ -1,17 +1,16 @@
 .info-poster {
-	/* display: block; */
 	float: right;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.295);
 	margin: 0 2em;
 	max-width: 30%;
     height: auto;
-	/* max-height: 470px; */
+	max-height: 470px;
 	margin-bottom: 1em;
 }
 
 #info-list {
-	padding-top: 1em;
-	margin-left: 13%;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 #info-list p:not(.info-title):not(.info-full-title) {
@@ -114,29 +113,30 @@
 }
 
 .alt {
-    background-color: rgb(243, 243, 243);
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-	margin-left: 13%;
-    margin-right: 1%;
+    background-color: rgb(203, 212, 210);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: .8rem;
+	padding-top: .5rem;
+	padding-bottom: .7rem;
+ }  
+
+.alt p {
+	font-weight: bold;
+	padding: .7rem 5rem;
+	text-decoration: underline;
+
 }
 
 .alt-links {
     list-style-type: none;
-    text-align: center;
-    font-size: .8rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-top: .5rem;
     padding-bottom: .5rem;
 }
 
 .alt-links li{
-    font-weight: normal;
     text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 0.3rem 1rem;
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    padding: 0.3rem 2rem;
     
 }
 

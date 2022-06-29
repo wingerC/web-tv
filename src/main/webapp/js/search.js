@@ -33,7 +33,8 @@ function render(data) {
 
 	movies = data;
 	const storeArray = localStorage.getItem(STORAGE_FAV) ?? [];
-	const output = document.createElement("div");
+	
+	//const output = document.createElement("div");
 
 	data.forEach((movie) => {
 		let srcPost = movie.description.src;
@@ -115,10 +116,11 @@ function render(data) {
 			window.location.assign(`./info.html?id=${movie.id}`);
 		});
 
-		output.appendChild(card);
+		//output.appendChild(card);
+		list.appendChild(card);
 	});
 
-	list.appendChild(output);
+	//list.appendChild(output);
 	document.getElementById("foot").style.display = "none";
 }
 

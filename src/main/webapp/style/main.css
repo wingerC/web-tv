@@ -15,10 +15,6 @@ a {
 	color: inherit;
 }
 
-h3 {
-	white-space: nowrap;
-}
-
 /* .container {
 	position: relative;
 } */
@@ -116,16 +112,18 @@ h3 {
 	color: rgb(245, 94, 106);
 }
 
-/* .main {
-	
-} */
+.main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
 
 .card {
-	display: inline-block;
 	padding: 20px 20px 20px 0;
 	overflow: auto;
 	font-family: Arial, Helvetica, sans-serif;
-	margin: 15px 5%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 	width: 45%;
 	border: 1px solid rgb(196, 195, 195);
 	border-radius: 5px;
@@ -136,6 +134,10 @@ h3 {
 	cursor: pointer;
 }
 
+/* .card:last-child {
+	margin-bottom: 1rem;
+} */
+
 .card:hover {
 	background-color: rgb(182, 182, 182);
 	border-color: rgb(156, 153, 153);
@@ -143,6 +145,7 @@ h3 {
 
 .card-h3 {
 	text-align: center;
+	white-space: nowrap;
 }
 
 .card-p {
@@ -202,8 +205,8 @@ h3 {
 
 .footer {
 	display: flex;
-	visibility: hidden;
-	margin: 1rem 0 1rem 12%;
+	/* visibility: hidden; */
+	margin: 1rem auto;
 	justify-content: center;
 }
 
@@ -279,21 +282,11 @@ h3 {
 }
 
 @media only screen and (max-width: 700px) {
-	.aside {
-		display: none;
-	}
+	
 	.card {
-		width: 100%;
-		margin: 0px;
-		margin-bottom: 10px;
+		width: 95%;
 	}
-	.main {
-		width: 100%;
-		margin-left: 0px;
-	}
-	.footer {
-		margin-left: 0;
-	}
+
 	.search {
 		display: none;
 	}

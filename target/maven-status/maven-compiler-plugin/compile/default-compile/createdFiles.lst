@@ -1,0 +1,11 @@
+com/winger/webtv/MainRouter.class
+com/winger/webtv/service/ServiceManager.class
+com/winger/webtv/repositories/MoviesRepository.class
+com/winger/webtv/WebTvApplication.class
+com/winger/webtv/service/Aggregator.class
+com/winger/webtv/entity/Movie.class
+com/winger/webtv/repositories/DescriptionRepository.class
+com/winger/webtv/service/Cache.class
+com/winger/webtv/service/DescriptionGetter.class
+com/winger/webtv/util/Translit.class
+com/winger/webtv/entity/Description.class
