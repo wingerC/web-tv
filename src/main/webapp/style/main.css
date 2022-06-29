@@ -19,15 +19,15 @@ h3 {
 	white-space: nowrap;
 }
 
-.container {
+/* .container {
 	position: relative;
-}
+} */
 
-.container::after {
+/* .container::after {
 	clear: both;
 	content: "";
 	display: table;
-}
+} */
 
 .nav {
 	background-color: rgb(25, 25, 36);
@@ -116,72 +116,16 @@ h3 {
 	color: rgb(245, 94, 106);
 }
 
-.aside {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 12%;
-	color: white;
-	background-color: rgb(34, 34, 48);
-	height: max(calc(100vh - 3rem), 100%);
-}
-.aside-list {
-	position: sticky;
-	top: 4rem;
-	list-style-type: none;
-}
-
-.aside-list li:not(li:last-child) {
-	padding: 10px 0;
-	margin: 0 2em 0 1em;
-	overflow: hidden;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 0.8rem;
-	border-bottom: 1px solid rgb(110, 110, 110);
-	transition: all 0.4s;
-	border-bottom: 1px solid rgb(95, 93, 93);
-}
-
-#li-info {
-	border-bottom: none;
-	margin-bottom: 2em;
-}
-
-.aside-list a {
-	display: block;
-}
-
-.aside-list .aside-warn {
-	padding: 35px 10px;
-	font-family: "Times New Roman", Times, serif;
-	font-style: italic;
-	font-size: 0.9em;
-	background-color: rgb(24, 24, 35);
-	display: none;
-}
-
-.aside-list li:hover:not(.aside-warn) {
-	background-color: var(--green);
-	cursor: pointer;
-}
-
-.aside-list li:active {
-	background-color: rgb(24, 24, 35);
-	cursor: pointer;
-}
-
-.main {
-	width: 86%;
-	margin-left: 14%;
-	padding: 0;
-}
+/* .main {
+	
+} */
 
 .card {
 	display: inline-block;
 	padding: 20px 20px 20px 0;
 	overflow: auto;
 	font-family: Arial, Helvetica, sans-serif;
-	margin: 15px;
+	margin: 15px 5%;
 	width: 45%;
 	border: 1px solid rgb(196, 195, 195);
 	border-radius: 5px;
