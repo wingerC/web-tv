@@ -170,11 +170,16 @@ function toggleFavBtn(element, isAdded) {
 async function fetchAltLinks(mov){
 	const req = await fetch(`alt?title=${mov.enTitle}`);
 	const movies = await req.json();
-	renderAltLinks(movies);
+
+	if (movies.length > 1){
+	renderAltLinks(movies, mov.id);
+	document.querySelector('.alt').style.display = 'block';
+	}
+
 	
 }
 
-function renderAltLinks(movies){
+function renderAltLinks(movies, id){
 	const ul = document.querySelector('.alt-links');
 	
 	const makeLi = (movie) => {
@@ -187,7 +192,7 @@ function renderAltLinks(movies){
 	};
 
 	movies.forEach(m => {
-		ul.appendChild(makeLi(m))
+		if (m.id != id) ul.appendChild(makeLi(m))
 	});
 
 }

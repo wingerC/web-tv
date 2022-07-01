@@ -30,12 +30,20 @@ const renderCounter = () => {
 fetchData(offset, length);
 renderCounter();
 
+function fetchData(offset, length) {
+	fetch(`list?offset=${offset}&length=${length}`)
+		.then((res) => res.json())
+		.then((data) => render(data))
+		.then(() => fetchSize());
+
+	offset += length;
+}
+
 function render(data) {
 	movies = data;
 
 	const storeArray = localStorage.getItem(STORAGE_FAV) ?? [];
 	const list = document.getElementById("list");
-	//const output = document.createElement("div");
 
 	data.forEach((movie) => {
 		let srcPost = movie.description.src;
@@ -112,7 +120,6 @@ function render(data) {
 		cardBtnHolder.appendChild(cardBtnFavor);
 		cardDescription.appendChild(cardBtnHolder);
 		card.appendChild(cardDescription);
-		//output.appendChild(card);
 		list.appendChild(card);
 
 		card.addEventListener("click", (e) => {
@@ -121,8 +128,7 @@ function render(data) {
 		});
 	});
 
-	//list.appendChild(output);
-	fetchSize();
+	//fetchSize();
 }
 
 function nextPage() {
@@ -139,14 +145,6 @@ function watchBtn(e) {
 	e.stopPropagation();
 	let url = e.target.dataset.url;
 	document.location = url;
-}
-
-function fetchData(offset, length) {
-	fetch(`list?offset=${offset}&length=${length}`)
-		.then((res) => res.json())
-		.then((data) => render(data));
-
-	offset += length;
 }
 
 function fetchSize() {
@@ -200,7 +198,7 @@ function renderPageNav(size) {
 	document.getElementById("page-ul").addEventListener("click", pageGo);
 
 	checkActivePage();
-	document.getElementById("foot").style.visibility = "visible";
+	document.getElementById("foot").style.display = "flex";
 }
 
 function pageGo(e) {

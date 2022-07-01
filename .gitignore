@@ -8,6 +8,7 @@
 .springBeans
 .sts4-cache
 .env
+*.gitignore
 
 ### IntelliJ IDEA ###
 .idea
@@ -27,4 +28,4 @@ build/
 
 ### VS Code ###
 .vscode/
-
+/src/main/resources/application.yml

@@ -205,7 +205,6 @@ a {
 
 .footer {
 	display: flex;
-	/* visibility: hidden; */
 	margin: 1rem auto;
 	justify-content: center;
 }
