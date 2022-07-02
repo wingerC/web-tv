@@ -16,7 +16,9 @@ a {
 }
 
 /* .container {
-	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 } */
 
 /* .container::after {
@@ -113,6 +115,7 @@ a {
 }
 
 .main {
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
@@ -162,11 +165,19 @@ a {
 
 .descr {
 	margin-left: 5%;
-	line-height: 1.5em;
+	line-height: 1.3rem;
 }
 
 .descr p {
+	height: 14rem;
 	margin-left: 2%;
+	padding-right: 2em;
+	padding-top: 1em;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-style: italic;
+	font-size: 90%;
+	color: rgb(24, 24, 24);
+	overflow: hidden;
 }
 
 .card-info {
@@ -175,7 +186,7 @@ a {
 
 .btn-holder {
 	display: flex;
-	height: 150px;
+	height: 70px;
 	justify-content: flex-start;
 	align-content: flex-end;
 	flex-wrap: wrap;
@@ -280,13 +291,24 @@ a {
 	line-height: 5rem;
 }
 
-@media only screen and (max-width: 700px) {
-	
+@media only screen and (max-width: 768px) {
 	.card {
 		width: 95%;
 	}
 
-	.search {
+	.fav-logo {
 		display: none;
 	}
+
+	.head-state-div {
+		display: none;
+	}
+
+	.favbtn {
+		display: none;
+	}
+
+	/* .search {
+		display: none;
+	} */
 }

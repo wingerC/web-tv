@@ -20,12 +20,12 @@ public class WebTvApplication {
 	@Bean
 	public CommandLineRunner init (){
 		return args -> {
-			if (System.getenv().get("REFRESH").equals("1")) {
+			/*if (System.getenv().get("REFRESH").equals("1")) {
 				System.out.println("REFRESH Content in progress");
 				serviceManager.refreshContent();
 				System.out.println("Refresh is DONE");
 			}
-			else System.out.println("No refresh requested");
+			else System.out.println("No refresh requested");*/
 			serviceManager.fillCacheList();
 		};
 	}

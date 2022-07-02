@@ -75,11 +75,11 @@ function render(data) {
 		const cardDescription = document.createElement("div");
 		cardDescription.className = "descr";
 
-		const cardPs = {
+		/* const cardPs = {
 			"Год: ": movie.year,
 			"Размер: ": movie.size,
 			"Пиры: ": movie.peers,
-			"Релиз: ": movie.date,
+			"Продолжительность: ": movie.description.time,
 		};
 
 		for (const [key, value] of Object.entries(cardPs)) {
@@ -90,7 +90,11 @@ function render(data) {
 			p.appendChild(span);
 			p.textContent += value;
 			cardDescription.appendChild(p);
-		}
+		} */
+		const p = document.createElement("p");
+		p.append(movie.description.info);
+		cardDescription.appendChild(p);
+
 		const cardBtnHolder = document.createElement("div");
 		cardBtnHolder.className = "btn-holder";
 
@@ -109,11 +113,11 @@ function render(data) {
 		cardBtnFavor.setAttribute("type", "button");
 		cardBtnFavor.setAttribute("data-title", movie.enTitle);
 		if (storeArray.includes(movie.enTitle)) {
-			cardBtnFavor.className = "btn-card fav-on";
+			cardBtnFavor.className = "btn-card favbtn fav-on";
 			cardBtnFavor.textContent = "Удалить";
 			cardBtnFavor.addEventListener("click", removeFromFav);
 		} else {
-			cardBtnFavor.className = "btn-card";
+			cardBtnFavor.className = "btn-card favbtn";
 			cardBtnFavor.textContent = "В Избранное";
 			cardBtnFavor.addEventListener("click", addToFav);
 		}
