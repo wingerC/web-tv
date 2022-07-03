@@ -33,7 +33,7 @@ function render(data) {
 
 	movies = data;
 	const storeArray = localStorage.getItem(STORAGE_FAV) ?? [];
-	
+
 	//const output = document.createElement("div");
 
 	data.forEach((movie) => {
@@ -66,7 +66,7 @@ function render(data) {
 		const cardDescription = document.createElement("div");
 		cardDescription.className = "descr";
 
-		const cardPs = {
+		/* const cardPs = {
 			"Год: ": movie.year,
 			"Размер: ": movie.size,
 			"Пиры: ": movie.peers,
@@ -80,7 +80,11 @@ function render(data) {
 			p.appendChild(span);
 			p.textContent += value;
 			cardDescription.appendChild(p);
-		}
+		} */
+		const p = document.createElement("p");
+		p.append(movie.description.info);
+		cardDescription.appendChild(p);
+
 		const cardBtnHolder = document.createElement("div");
 		cardBtnHolder.className = "btn-holder";
 

@@ -61,7 +61,7 @@ function render(data) {
 		const cardDescription = document.createElement("div");
 		cardDescription.className = "descr";
 
-		const cardPs = {
+		/* const cardPs = {
 			"Год: ": movie.year,
 			"Размер: ": movie.size,
 			"Пиры: ": movie.peers,
@@ -75,7 +75,12 @@ function render(data) {
 			p.appendChild(span);
 			p.textContent += value;
 			cardDescription.appendChild(p);
-		}
+		} */
+
+		const p = document.createElement("p");
+		p.append(movie.description.info);
+		cardDescription.appendChild(p);
+
 		const cardBtnHolder = document.createElement("div");
 		cardBtnHolder.className = "btn-holder";
 
@@ -114,7 +119,6 @@ function render(data) {
 		});
 	});
 
-	
 	document.getElementById("foot").style.display = "none";
 }
 
