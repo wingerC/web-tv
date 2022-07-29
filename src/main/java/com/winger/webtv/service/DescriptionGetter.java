@@ -102,13 +102,24 @@ public class DescriptionGetter {
         for (int i = 1; i < Math.min(trs.size(), 10); i++) {
             String urlPage = "http://rutor.info" + trs.get(i).select("td:nth-child(2) a:last-child").attr("href");
             String tempSrc = getSrcLink(urlPage);
-            if (tempSrc != null && !tempSrc.contains("radikal")) {
+            if (tempSrc != null && !tempSrc.contains("radikal") && !tempSrc.startsWith("http:")) {
                 img = tempSrc;
                 System.out.println("Proceeded altImage");
                 break;
             }
         }
         return img;
+    }
+
+    public String refactorSrcHttp(String url){
+        Document doc = null;
+        try {
+            doc = Jsoup.parse(new URL(url), 5000);
+        } catch (IOException e) {
+            System.out.println("Error parsing url in refactorSrcHttp");
+        }
+
+        return getAlternateSrc(doc);
     }
 
 

@@ -38,7 +38,7 @@ public class MainRouter {
 
     @GetMapping("/find")
     @ResponseBody
-    //@CrossOrigin
+    @CrossOrigin
     public List<Movie> searchTest(@RequestParam String title){
         return
             cache.getCachedMovies().stream().filter(m-> m.getEnTitle().toLowerCase().contains(title.toLowerCase())

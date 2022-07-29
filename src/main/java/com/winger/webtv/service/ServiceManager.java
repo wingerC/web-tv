@@ -45,6 +45,14 @@ public class ServiceManager {
                     idList.add(movie.getId());
                     Optional<Description> optionalDescription = descriptionRepository.findByTitle(movie.getEnTitle());
                     optionalDescription.ifPresentOrElse(description -> {
+                        if (description.getInfo().equals("undef")){
+                            getNewDescription(movie, description);
+                            return;
+                        }
+                        if (description.getSrc().startsWith("http:")){
+                            getNewSrc(movie, description);
+                            return;
+                        }
                         movie.setDescription(description);
                         moviesRepository.save(movie);
                             },
@@ -65,6 +73,36 @@ public class ServiceManager {
 
         filterStorage(idList);
 
+    }
+
+    private void getNewDescription (Movie movie, Description description){
+        Description newDescription;
+        try {
+            //System.out.println("New description in progress: " + movie.getEnTitle());
+            newDescription = descriptionGetter.getDescription(movie);
+
+            if (newDescription.getInfo().equals("undef")) return;
+
+            description.setInfo(newDescription.getInfo());
+            descriptionRepository.save(description);
+            movie.setDescription(description);
+            moviesRepository.save(movie);
+
+            System.out.println("New Info Description refactored: " + newDescription.getTitle());
+        } catch (IOException | InterruptedException e) {
+            System.out.println("Exception in Info Refactoring");
+        }
+    }
+
+    private void getNewSrc(Movie movie, Description description){
+            String newSrc = descriptionGetter.refactorSrcHttp(movie.getUrlPage());
+
+            description.setSrc(newSrc);
+            descriptionRepository.save(description);
+            movie.setDescription(description);
+            moviesRepository.save(movie);
+
+            System.out.println("-- Src Description refactored: " + description.getTitle());
     }
 
     public void filterStorage (List<String> list){
